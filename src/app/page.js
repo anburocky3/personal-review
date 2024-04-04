@@ -24,7 +24,7 @@ export default function Home() {
         <h3 className="font-semibold">Share your reviews</h3>
         <ul className="my-5 space-y-4">
           <li>
-            <Link href={'/reviews/youtube'} className="youtube-card border px-4 py-2 flex items-center space-x-4 rounded">
+            <Link href={'/reviews/youtube'} className="youtube-card border px-4 py-2 flex items-center space-x-4 rounded hover:bg-red-50">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -44,7 +44,7 @@ export default function Home() {
             </Link>
           </li>
           <li>
-            <div className="youtube-card border px-4 py-2 flex items-center space-x-4 rounded">
+          <Link href={'/reviews/events'}  className="youtube-card border px-4 py-2 flex items-center space-x-4 rounded hover:bg-indigo-50">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -58,7 +58,7 @@ export default function Home() {
                 />
               </svg>
               <span>Event Reviews</span>
-            </div>
+            </Link>
           </li>
         </ul>
       </main>
