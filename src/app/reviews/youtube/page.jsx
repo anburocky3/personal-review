@@ -1,13 +1,13 @@
 "use client";
 
-import TextArea from "@/components/forms/TextArea";
+import TextArea from "../../../components/forms/TextArea";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import ReactStars from "react-rating-stars-component";
-import Label from "@/components/forms/Label";
-import FormInput from "@/components/forms/FormInput";
+import Label from "../../../components/forms/Label";
+import FormInput from "../../../components/forms/FormInput";
 
 const formSchema = z.object({
   contentQuality: z.string().min(3).max(200),
