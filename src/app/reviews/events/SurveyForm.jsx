@@ -4,7 +4,7 @@ import { Survey } from "survey-react-ui";
 import "survey-core/defaultV2.min.css";
 import { Model } from "survey-core";
 import { useCallback } from "react";
-// import { LayeredDarkPanelless } from "survey-core/themes/layered-dark-panelless";
+import { LayeredDarkPanelless } from "survey-core/themes/layered-dark-panelless";
 // import { addSurveyFeedback } from "@/firebase/services/institution";
 import { addSurveyFeedback } from "../../../firebase/services/institution";
 // ...
@@ -125,7 +125,7 @@ const surveyJson = {
 const SurveyForm = () => {
   const survey = new Model(surveyJson);
 
-  // survey.applyTheme(LayeredDarkPanelless);
+  survey.applyTheme(LayeredDarkPanelless);
 
   const surveyComplete = useCallback(async (survey) => {
     survey.setValue("code", "kongu.ac.in");
