@@ -21,10 +21,22 @@ export default function Home() {
       </header>
 
       <main className="mt-24 sm:mt-32 mb-10 bg-white p-10 m-2 rounded shadow">
-        <h3 className="font-semibold">Share your reviews</h3>
+        <div className="flex justify-between items-center">
+          <h3 className="font-semibold">Featured Links</h3>
+          <a
+            href="https://anburocky3.github.io"
+            className="text-blue-500 text-sm uppercase font-semibold"
+            target="_blank"
+          >
+            Visit Website
+          </a>
+        </div>
         <ul className="my-5 space-y-4">
           <li>
-            <Link href={'/reviews/youtube'} className="youtube-card border px-4 py-2 flex items-center space-x-4 rounded hover:bg-red-50">
+            <Link
+              href={"/reviews/youtube"}
+              className="youtube-card border px-4 py-2 flex items-center space-x-4 rounded hover:bg-red-50"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -44,7 +56,10 @@ export default function Home() {
             </Link>
           </li>
           <li>
-          <Link href={'/reviews/events'}  className="youtube-card border px-4 py-2 flex items-center space-x-4 rounded hover:bg-indigo-50">
+            <Link
+              href={"/reviews/events"}
+              className="youtube-card border px-4 py-2 flex items-center space-x-4 rounded hover:bg-indigo-50"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -58,6 +73,25 @@ export default function Home() {
                 />
               </svg>
               <span>Event Reviews</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={"/about"}
+              className="youtube-card border px-4 py-2 flex items-center space-x-4 rounded hover:bg-red-50"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m13.06 8.111l1.415 1.414a7 7 0 0 1 0 9.9l-.354.353a7 7 0 1 1-9.9-9.9l1.415 1.415a5 5 0 1 0 7.071 7.071l.354-.354a5 5 0 0 0 0-7.07l-1.415-1.415zm6.718 6.01l-1.414-1.414a5 5 0 0 0-7.071-7.07l-.354.353a5 5 0 0 0 0 7.07l1.415 1.415l-1.415 1.414l-1.414-1.414a7 7 0 0 1 0-9.9l.354-.353a7 7 0 1 1 9.9 9.9"
+                ></path>
+              </svg>
+              <span>Social Links</span>
             </Link>
           </li>
         </ul>

@@ -25,11 +25,7 @@ const FormSelect = ({
       >
         {placeholder && <option value="">Select {placeholder}</option>}
         {options.map((option, index) => (
-          <option
-            key={index}
-            value={option.value}
-            selected={option.value === "vistas.ac.in"}
-          >
+          <option key={index} value={option.value}>
             {option.text}
           </option>
         ))}
