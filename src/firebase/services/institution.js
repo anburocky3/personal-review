@@ -8,6 +8,7 @@ import { db } from "../index";
 
 const COLLECTION_NAME = "colleges";
 const COLLECTION_FEEDBACKS = "feedbacks";
+const COLLECTION_WORKSHOP_SURVEY = "workshop-survey";
 
 export const getAllColleges = async () => {
   const querySnapshot = await getDocs(collection(db, COLLECTION_NAME));
@@ -22,6 +23,19 @@ export const getAllColleges = async () => {
 export const addSimpleFeedback = async (data) => {
   try {
     const docRef = await addDoc(collection(db, COLLECTION_FEEDBACKS), {
+      ...data,
+      createdAt: serverTimestamp(),
+    });
+
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+};
+
+export const addSurveyFeedback = async (data) => {
+  try {
+    const docRef = await addDoc(collection(db, COLLECTION_WORKSHOP_SURVEY), {
       ...data,
       createdAt: serverTimestamp(),
     });

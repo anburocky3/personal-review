@@ -13,6 +13,7 @@ import {
   addSimpleFeedback,
   getAllColleges,
 } from "@/firebase/services/institution";
+import SurveyForm from "./SurveyForm";
 
 const formSchema = z.object({
   institution: z.string().min(3).max(200),
@@ -80,16 +81,23 @@ function EventsPage() {
     formState: { errors },
     handleSubmit,
     reset,
+    setValue,
   } = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      institution: "vistas.ac.in",
+      // institution: "kongu.ac.in",
       studentName: "Anonymous",
       overallRating: "",
     },
   });
 
   const [colleges, setColleges] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setValue("institution", "kongu.ac.in");
+    }, 1000);
+  }, [setValue]);
 
   useEffect(() => {
     // const db = firebase.firestore();
@@ -123,6 +131,7 @@ function EventsPage() {
     console.log(newRating);
   };
 
+  return <SurveyForm />;
   return (
     <div className="bg-white m-3 p-5 rounded">
       {/* <ol className="flex justify-center mx-auto   items-center w-full mb-4 sm:mb-5 ">
@@ -175,7 +184,7 @@ function EventsPage() {
           </span> */}
         </h4>
         <div className="mb-4 space-y-5">
-          <FormSelect
+          {/* <FormSelect
             label="Institution"
             name="institution"
             register={register("institution")}
@@ -189,10 +198,9 @@ function EventsPage() {
             ]}
             error={errors.institution}
             required
-            disabled
-          />
+          /> */}
 
-          <div>
+          {/* <div>
             <FormInput
               label="Student Name"
               name="studentName"
@@ -201,9 +209,9 @@ function EventsPage() {
               placeholder="Student Name"
               required
             />
-          </div>
+          </div> */}
 
-          <FormSelect
+          {/* <FormSelect
             label="Session Overall Rating"
             name="overallRating"
             register={register("overallRating")}
@@ -215,9 +223,9 @@ function EventsPage() {
             }))}
             error={errors.overallRating}
             required
-          />
+          /> */}
 
-          <div>
+          {/* <div>
             <TextArea
               label="Student Feedback"
               name="feedback"
@@ -226,7 +234,9 @@ function EventsPage() {
               placeholder="Enter briefly!"
               required
             ></TextArea>
-          </div>
+          </div> */}
+
+          <SurveyForm />
 
           {/* <div>
             <FormInput
@@ -267,12 +277,12 @@ function EventsPage() {
         >
           Next Step: Payment Info
         </button> */}
-        <button
+        {/* <button
           type="submit"
           className="text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center  w-full"
         >
           Submit
-        </button>
+        </button> */}
       </form>
     </div>
   );
