@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { applySocialIcons } from "@/helpers/index";
+import { applySocialIcons } from "../../helpers/index";
 import QRCodePage from "./QRCodePage";
 
 const LinkComponent = ({ href, type, text, username, className }) => {

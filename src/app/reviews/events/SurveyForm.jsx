@@ -4,19 +4,28 @@ import { Survey } from "survey-react-ui";
 import "survey-core/defaultV2.min.css";
 import { Model } from "survey-core";
 import { useCallback } from "react";
-import { LayeredDarkPanelless } from "survey-core/themes/layered-dark-panelless";
-import { addSurveyFeedback } from "@/firebase/services/institution";
+// import { LayeredDarkPanelless } from "survey-core/themes/layered-dark-panelless";
+// import { addSurveyFeedback } from "@/firebase/services/institution";
+import { addSurveyFeedback } from "../../../firebase/services/institution";
 // ...
 const surveyJson = {
   pages: [
     {
       elements: [
+        // {
+        //   type: "dropdown",
+        //   name: "institution",
+        //   title: "Institution",
+        //   isRequired: true,
+        //   choices: ["Kongu Engineering College - KEC"],
+        // },
         {
-          type: "dropdown",
           name: "institution",
+          type: "text",
           title: "Institution",
-          isRequired: true,
-          choices: ["Kongu Engineering College - KEC"],
+          placeholder: "Institution Name",
+          minLength: 3,
+          maxLength: 25,
           isRequired: true,
           defaultValue: "Kongu Engineering College - KEC",
         },
@@ -116,10 +125,10 @@ const surveyJson = {
 const SurveyForm = () => {
   const survey = new Model(surveyJson);
 
-  survey.applyTheme(LayeredDarkPanelless);
+  // survey.applyTheme(LayeredDarkPanelless);
 
   const surveyComplete = useCallback(async (survey) => {
-    const collegeCode = survey.setValue("code", "kongu.ac.in");
+    survey.setValue("code", "kongu.ac.in");
 
     try {
       await addSurveyFeedback(survey.data);
@@ -134,7 +143,7 @@ const SurveyForm = () => {
   survey.onComplete.add(surveyComplete);
 
   return (
-    <div className="h-screen">
+    <div>
       <Survey model={survey} />
     </div>
   );
