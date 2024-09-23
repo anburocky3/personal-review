@@ -27,7 +27,7 @@ const surveyJson = {
           minLength: 3,
           maxLength: 25,
           isRequired: true,
-          defaultValue: "Kongu Engineering College - KEC",
+          defaultValue: "Vels University - VISTAS",
         },
         {
           name: "name",
@@ -128,7 +128,7 @@ const SurveyForm = () => {
   survey.applyTheme(LayeredDarkPanelless);
 
   const surveyComplete = useCallback(async (survey) => {
-    survey.setValue("code", "kongu.ac.in");
+    survey.setValue("code", "vistas.ac.in");
 
     try {
       await addSurveyFeedback(survey.data);
