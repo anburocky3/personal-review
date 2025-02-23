@@ -66,6 +66,11 @@ const colleges = [
     value: "vit.ac.in",
     text: "VIT - Vellore Institute of Technology",
   },
+  {
+    id: 11,
+    value: "sitams.ac.in",
+    text: "SITAMS - Sreenivasa Institute of Technology and Management Studies",
+  },
 ];
 
 function EventsPage() {
